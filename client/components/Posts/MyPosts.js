@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, Text } from "react-native";
 import MyPost from "./MyPost";
 import useMyPostsStore from "../../stores/myPostsStore";
 import useUserStore from "../../stores/userStore";
@@ -17,12 +17,24 @@ function MyPosts() {
     });
   }, [setPosts, userId]);
   return (
-    <FlatList
-      data={posts}
-      renderItem={(item) => <MyPost data={item.item} />}
-      keyExtractor={(item) => item.id}
-    />
+    <>
+      <Text style={styles.text}>Sản phẩm của tôi</Text>
+
+      <FlatList
+        data={posts}
+        renderItem={(item) => <MyPost data={item.item} />}
+        keyExtractor={(item) => item.id}
+      />
+    </>
   );
 }
+
+const styles = StyleSheet.create({
+  text: {
+    color: COLORS.text_2,
+    fontSize: 24,
+    marginLeft: 4,
+  },
+});
 
 export default MyPosts;

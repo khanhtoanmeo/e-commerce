@@ -28,7 +28,12 @@ function Profile() {
       <Text style={styles.text}>Tên người dùng : {username}</Text>
       <Text style={styles.text}>Ngân hàng : {bankName}</Text>
       <Text style={styles.text}>Tài khoản ngân hàng : {bankAccount}</Text>
-      <CustomButton title={"Đăng xuất"} onPress={logoutHandler} />
+      <CustomButton
+        title={"Đăng xuất"}
+        style={styles.custom}
+        textStyle={{ color: COLORS.text_button }}
+        onPress={logoutHandler}
+      />
     </View>
   );
 }
@@ -42,6 +47,12 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderBottomColor: COLORS.anchor,
+  },
+  custom: {
+    backgroundColor: COLORS.action,
+    width: 200,
+    marginBottom: 10,
+    alignSelf: "center",
   },
 });
 

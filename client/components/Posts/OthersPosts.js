@@ -5,6 +5,7 @@ import FetchData from "../../utils/fetchData";
 import useUserStore from "../../stores/userStore";
 import useNavigationStore from "../../stores/navigationStore";
 import COLORS from "../../utils/color";
+import { SafeAreaView } from "react-native";
 function OthersPosts() {
   const [posts, setPosts] = useState([]);
   const id = useUserStore((state) => state.user.id);
@@ -16,7 +17,7 @@ function OthersPosts() {
     });
   }, []);
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Button
         title={"Xem Hóa đơn của tôi"}
         onPress={() => {
@@ -25,7 +26,7 @@ function OthersPosts() {
       />
 
       {posts?.length > 0 ? (
-        <View>
+        <View style={{ flex: 1 }}>
           <Text style={styles.label}>Tất cả sản phẩm</Text>
           <FlatList
             style={{ marginTop: 30 }}

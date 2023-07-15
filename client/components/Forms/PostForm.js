@@ -23,9 +23,11 @@ function PostForm() {
   const filePickHandler = useCallback(async function () {
     const data = await getDocumentAsync({ type: "image/*" });
     if (data.type === "success") setImageInfo(data);
-  });
+  }, []);
 
   async function postHandler() {
+    if (isLoading)
+      return Alert.alert("Đang đăng bài, vui lòng chờ trong giây lát");
     setIsLoading(true);
 
     if (!imageInfo || !productName || !type || !description || !price) {
@@ -61,8 +63,8 @@ function PostForm() {
 
       if (postResponse.status === "Ok") {
         setIsLoading(false);
-        Alert.alert("Hoàn thành", "Đã đăng bài");
         addPost(postResponse.post);
+        Alert.alert("Hoàn thành", "Đã đăng bài");
       } else {
         setIsLoading(false);
         Alert.alert("Lỗi", "Không đăng bài thành công");
@@ -169,7 +171,6 @@ function PostForm() {
       </View>
 
       <CustomButton title={"Đăng bài"} onPress={postHandler} />
-
       <Text style={styles.loading}>{isLoading ? "Uploading...." : ""}</Text>
     </View>
   );
@@ -219,7 +220,7 @@ const styles = StyleSheet.create({
   loading: {
     textAlign: "center",
     fontSize: 30,
-    color: COLORS.text_1,
+    color: COLORS.text_2,
   },
 });
 

@@ -28,7 +28,7 @@ function RealApp() {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({}) => (
-            <Fontisto name="person" size={24} color={COLORS.text_3} />
+            <Fontisto name="person" size={20} color={COLORS.text_3} />
           ),
         }}
       />
@@ -37,7 +37,7 @@ function RealApp() {
         component={WorldScreen}
         options={{
           tabBarIcon: () => (
-            <Entypo name="shop" size={24} color={COLORS.text_3} />
+            <Entypo name="shop" size={20} color={COLORS.text_3} />
           ),
         }}
       />
@@ -46,7 +46,7 @@ function RealApp() {
         component={PostUploadScreen}
         options={{
           tabBarIcon: () => (
-            <Fontisto name="upload" size={24} color={COLORS.text_3} />
+            <Fontisto name="upload" size={20} color={COLORS.text_3} />
           ),
         }}
       />

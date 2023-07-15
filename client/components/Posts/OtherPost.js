@@ -13,7 +13,7 @@ function OtherPost({ data }) {
         });
       }}
     >
-      <View style={styles.imageContainer}>
+      <View>
         <Image style={styles.image} source={{ uri: image }} alt="Image" />
       </View>
       <View>
@@ -34,27 +34,27 @@ const styles = StyleSheet.create({
     width: 150,
     height: 130,
   },
-  imageContainer: {},
   container: {
     flexDirection: "row",
     borderWidth: 2,
     borderColor: COLORS.border,
     borderBottomWidth: 4,
-    marginHorizontal: 30,
+    marginHorizontal: 15,
     borderRadius: 10,
     marginBottom: 7,
   },
   name: {
     color: COLORS.text_3,
-    fontSize: 19,
+    fontSize: 24,
     marginHorizontal: 10,
-    marginVertical: 4,
+    marginVertical: 8,
     fontWeight: 900,
   },
   price: {
-    fontSize: 27,
+    fontSize: 24,
     marginHorizontal: 10,
     color: COLORS.text_1,
+    marginTop: 30,
   },
 });
 
